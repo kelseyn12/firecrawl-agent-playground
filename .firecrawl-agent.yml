@@ -1,14 +1,21 @@
 labels:
-  bug: ["error", "panic", "throws", "fails", "regression", "broken", "crash"]
-  perf: ["slow", "latency", "memory", "cpu", "throughput"]
-  docs: ["readme", "docs", "changelog", "example"]
-areas: ["crawler", "md-converter", "pipeline", "api", "cli"]
+  bug: ["error", "panic", "throw", "crash", "exception"]
+  docs: ["readme", "typo", "docs", "documentation"]
 priorities:
-  P0: ["crash", "security", "data loss"]
-  P1: ["regression", "broken in main"]
+  P0: ["panic", "security", "data loss", "crash"]
+  P1: ["regression", "blocking", "broken"]
+areas: ["crawler", "pipeline", "api", "docs", "sdk"]
+
 conventions:
-  packageManager: pnpm
-  testCmd: "pnpm test"
-  buildCmd: "pnpm -w build"
-  examplesDir: "src/examples"
-  whitelistPaths: ["packages/", "src/", "docs/", "CHANGELOG.md"]
+  # This keeps CI fast and avoids pulling in the whole monorepo test matrix.
+  testCmd: pnpm exec vitest run tests/agent --reporter=default --passWithNoTests
+
+  # Paths the agent is allowed to touch when generating diffs
+  whitelistPaths:
+    - tests/agent/
+    - tools/
+    - packages/
+    - src/
+    - apps/
+    - docs/
+    - CHANGELOG.md
