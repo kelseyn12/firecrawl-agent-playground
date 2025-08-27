@@ -5,8 +5,7 @@
     height="200"
   >
 </h3>
-# Firecrawl Agent Playground
-This is a test change for CI
+# 🔥 This repo demonstrates a GitHub Action that auto-triages issues, generates failing tests, and proposes minimal diffs. Example PRs: #10.
 <div align="center">
     <a href="https://github.com/firecrawl/firecrawl/blob/main/LICENSE">
   <img src="https://img.shields.io/github/license/firecrawl/firecrawl" alt="License">
