@@ -1,0 +1,29 @@
+name: Agent Runner
+on:
+  workflow_dispatch:
+  schedule: [{ cron: "0 * * * *" }]
+  issue_comment:
+    types: [created]
+permissions:
+  issues: write
+  pull-requests: write
+  contents: write
+  checks: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - run: pnpm install
+      - run: pnpm agent:run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

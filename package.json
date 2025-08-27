@@ -1,0 +1,27 @@
+{
+  "name": "firecrawl-agent-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "build": "echo \"(no build step yet — ok for agent)\"",
+  "test": "vitest run --reporter=default || echo \"(no tests yet — ok)\"",
+  "agent:triage": "tsx tools/agent/triage.ts",
+  "agent:run": "tsx tools/agent/run.ts",
+  "agent:docs": "tsx tools/agent/docs.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "yaml": "^2.8.1"
+  },
+  "dependencies": {
+    "octokit": "^5.0.3",
+    "openai": "^5.16.0"
+  }
+}
