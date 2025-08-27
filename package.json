@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "build": "echo \"(no build step yet — ok for agent)\"",
-  "test": "vitest run --reporter=default || echo \"(no tests yet — ok)\"",
-  "agent:triage": "tsx tools/agent/triage.ts",
-  "agent:run": "tsx tools/agent/run.ts",
-  "agent:docs": "tsx tools/agent/docs.ts"
+    "build": "echo \"(no build step yet — ok for agent)\"",
+    "test": "vitest run --reporter=default || echo \"(no tests yet — ok)\"",
+    "agent:triage": "tsx tools/agent/triage.ts",
+    "agent:run": "tsx tools/agent/run.ts",
+    "agent:docs": "tsx tools/agent/docs.ts"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,7 @@
     "yaml": "^2.8.1"
   },
   "dependencies": {
+    "@octokit/rest": "^22.0.0",
     "octokit": "^5.0.3",
     "openai": "^5.16.0"
   }

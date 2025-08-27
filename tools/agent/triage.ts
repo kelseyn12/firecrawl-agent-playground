@@ -1,4 +1,5 @@
-import { Octokit } from "octokit";
+import { Octokit } from "@octokit/rest";
+
 console.log("triage stub running");
 
 const repo = process.env.GITHUB_REPOSITORY || "";
@@ -9,4 +10,6 @@ if (!owner || !name) {
 }
 
 const octo = new Octokit({ auth: process.env.GITHUB_TOKEN });
-console.log(`Would triage latest issue in ${owner}/${name}`);
+// example no-op call just to prove it constructs:
+console.log(`Octokit ready for ${owner}/${name}`);
+
